@@ -11,7 +11,11 @@ Just call `MultilineStringLiteral.read()` and put a multiline comment between th
 public static String MultilineStringLiteral.read([MultilineStringLiteral.Template... templates])
 ```
 
-### Basic
+Depending on your project structure, you might need to update `MultilineStringLiteral.directory`
+
+*This is obviously not meant for use in production code, but I found it quite useful for use in unit tests*
+
+### Multiline Strings
 
 ```java
 String text = MultilineStringLiteral.read(
@@ -51,8 +55,6 @@ is
 really
 awesome
 ```
-
-
 
 ## License
 MIT @ [Lukas Kollmer](https://lukaskollmer.me)
