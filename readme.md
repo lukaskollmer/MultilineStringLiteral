@@ -40,10 +40,10 @@ You can pass one or more `MultilineStringLiteral.Template` objects to the `read`
 String text = MultilineStringLiteral.read(
         new MultilineStringLiteral.Template("$template$", "really")
 /*
-THIS
-IS
+this
+is
 $template$
-AWESOME
+awesome
 */
 );
 ```
