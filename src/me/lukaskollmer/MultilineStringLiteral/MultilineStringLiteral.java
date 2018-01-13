@@ -1,10 +1,10 @@
 /*
-*
-* Multiline String Literals
-*
-* (based on https://gist.github.com/isa/878708)
-*
-* */
+ *
+ * Multiline String Literals
+ *
+ * (based on https://gist.github.com/isa/878708)
+ *
+ * */
 
 package me.lukaskollmer.MultilineStringLiteral;
 
@@ -13,6 +13,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MultilineStringLiteral {
+
+    public static String directory = "./";
 
     private static Map<String, String> cache = new HashMap<>();
 
@@ -30,9 +32,8 @@ public class MultilineStringLiteral {
 
     // [precondition] no duplicates
     public static String read(Template... templates) {
-
         StackTraceElement element = new RuntimeException().getStackTrace()[1];
-        String name = "./" + element.getClassName().replace('.', '/') + ".java";
+        String name = directory + element.getClassName().replace('.', '/') + ".java";
 
         String identifier = String.format("%s:%s", name, element.getLineNumber());
 
@@ -57,7 +58,7 @@ public class MultilineStringLiteral {
             text = text.replace(template.template, template.substitution);
         }
 
-        return text;
+        return text.trim();
     }
 
     private static String convertStreamToString(InputStream is, int lineNum) {
